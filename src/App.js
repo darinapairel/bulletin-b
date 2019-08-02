@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AdvertisementsList from './AdvertisementsList.js';
+import { Link, Route, BrowserRouter } from 'react-router-dom'
 
-function App() {
+
+class App extends React.Component {
+  state = {
+    products:[],
+    sellers:[]
+  }
+
+  componentWillMount(){
+    Promise.all(['https://avito.dump.academy/sellers/', 'https://avito.dump.academy/products'].map(url => fetch(url).then(j => j.json()) )) 
+    .then(data=>{
+      
+      let sellers = data[0].data
+      let products = data[1].data
+      console.log(data)
+      products = products.map(p => {
+        let seller = sellers.find(s => s.id === p.relationships.seller) || {name: '', rating: 0}
+        return {...p, seller_name: seller.name, seller_rating: seller.rating}
+      })
+
+      this.setState({...this.state, products, sellers})
+
+    })
+      // .then((json)=>json.json())
+      // .then((sellers)=>this.setState({sellers: sellers.data})) 
+
+    
+      // .then((json)=>json.json())
+      // .then((json)=> this.setState({products: json.data}))
+}
+  render(){
+    const advList = () => <AdvertisementsList sellers={this.state.sellers} products={this.state.products}/>
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {console.log(this.state)}
+      <BrowserRouter>
+      <div>
+        <Route exact path="/" component={advList}/>
+        </div>
+      </BrowserRouter> 
     </div>
   );
+}
 }
 
 export default App;
