@@ -25,12 +25,6 @@ class App extends React.Component {
       this.setState({...this.state, products, sellers})
 
     })
-      // .then((json)=>json.json())
-      // .then((sellers)=>this.setState({sellers: sellers.data})) 
-
-    
-      // .then((json)=>json.json())
-      // .then((json)=> this.setState({products: json.data}))
 }
   render(){
     const advList = () => <AdvertisementsList sellers={this.state.sellers} products={this.state.products}/>

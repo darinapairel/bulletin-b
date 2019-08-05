@@ -26,7 +26,7 @@ class Advertisement extends React.Component{
           <span className="advertisement_name">{product.seller_name}</span>
           <StarRatings rating={product.seller_rating} starRatedColor="gold" numberOfStars={5} name='rating'/>         
           <Carousel width="500px" showThumbs={false}>{product.pictures.map((picture, i)=><img src={picture} key={i}/>)}</Carousel>
-          <span className="advertisement_price">{numPrettier(product.price)}</span>
+          <span className="advertisement_price">{numPrettier(product.price)}₽</span>
         </article>
     )
   }
