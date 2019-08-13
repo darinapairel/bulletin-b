@@ -1,7 +1,11 @@
-import React from 'react';
-import './App.css';
-import AdvertisementsList from './AdvertisementsList.js';
+import React from 'react'
+import './App.css'
+import 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css'
+import AdvertisementsList from './AdvertisementsList.js'
+import FavouriteAdverticement from './FavouriteAdverticement.js'
 import { Link, Route, BrowserRouter } from 'react-router-dom'
+import 'font-awesome/css/font-awesome.min.css'
 
 
 class App extends React.Component {
@@ -28,13 +32,14 @@ class App extends React.Component {
 }
   render(){
     const advList = () => <AdvertisementsList sellers={this.state.sellers} products={this.state.products}/>
+    const favAdv = () => <FavouriteAdverticement/>
   return (
-    <div className="App">
-    {console.log(this.state)}
+    <div className="App container">
       <BrowserRouter>
       <div>
         <Route exact path="/" component={advList}/>
-        </div>
+        <Route exact path='/favourite' component={favAdv}/>        
+      </div>
       </BrowserRouter> 
     </div>
   );
