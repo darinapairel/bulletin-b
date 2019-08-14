@@ -1,5 +1,7 @@
 import React from 'react'
-import Advertisement from './Advertisement';
+import Advertisement from './Advertisement'
+import { Link } from 'react-router-dom'
+
 
 export default class FavouriteAdverticement extends React.Component{
     state = {products:[]}
@@ -10,7 +12,10 @@ export default class FavouriteAdverticement extends React.Component{
         return Object.keys(localStorage).map(k => <Advertisement product={JSON.parse(localStorage.getItem(k))}/>)
     }
     render(){
-        return  <div>{this.renderFavAdv()}</div>
+        return  <div>
+            <Link to="/"><i className="fa fa-home"></i></Link>
+            {this.renderFavAdv()}
+        </div>
         
     }
 }

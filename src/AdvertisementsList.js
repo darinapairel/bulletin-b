@@ -6,10 +6,9 @@ import 'materialize-css/dist/css/materialize.min.css'
 import noUiSlider from 'materialize-css/extras/noUiSlider/nouislider.js'
 import 'materialize-css/extras/noUiSlider/nouislider.css'
 
-class AdvertisementsList extends React.Component {
+export default class AdvertisementsList extends React.Component {
    state={
-       firstPrice:0,
-       secondPrice:900000000,
+       price:[0, 1000000],
        selectedCategory: 'any',
        selectedSort: 'price'
 
@@ -21,25 +20,29 @@ class AdvertisementsList extends React.Component {
         let instances = M.FormSelect.init(elems, options)
          
         const slider = document.getElementById('priceSlider')
+        let sliderValues =[ 
+            document.getElementById('lower-price'),
+            document.getElementById('upper-price')
+        ]
         noUiSlider.create(slider, {
-            start: [0, 1000000],
+            start: [0, 3000000],
             connect: true,
-            step: 1000,
+            step: 100,
+            tooltips: false,
             range: {
                 'min': 0,
-                'max': 9000000
-                
+                'max': 3000000
             }
+        })
+        slider.noUiSlider.on('change', (values,handle)=>{
+            var prices = this.state.price
+            prices[handle] = values[handle]
+            sliderValues[handle].innerHTML = values[handle]
+            this.setState({...prices})
 
         })
     }
 
-    firstPrice = (e) => {
-        this.setState({firstPrice: e.target.value})
-    }
-    secondPrice = (e) => {
-        this.setState({secondPrice: e.target.value})
-    }
     categoryOnChange = (e) => {
         this.setState({selectedCategory: e.target.value})
     }
@@ -47,12 +50,12 @@ class AdvertisementsList extends React.Component {
         this.setState({selectedSort: e.target.value})
     }
     mapAdv = () => {
-        let {products, sellers} = this.props
-        let {firstPrice, secondPrice} = this.state
+        let {products} = this.props
+        let prices = this.state.price
 
         products = products.filter(p => {
             let price = p.price || ''
-            return price>=firstPrice && price<=secondPrice
+            return price>=prices[0] && price<=prices[1]
         })
         if (this.state.selectedSort === 'price')
             products = products.sort((a,b)=>{
@@ -86,13 +89,18 @@ class AdvertisementsList extends React.Component {
    render(){
     return <section>
         <Link to='/favourite'><i className="fa fa-heart"></i></Link>
-        <article className="filter row">
+        <header className="filter row">
             <form className="col s12"> 
+            <div className="input-field col s12 l6" style={{marginTop: "3.7rem"}}>  
+                <label style={{position: "absolute", top: "-68px"}}>Цена</label>
+                <div id="priceSlider"></div> 
 
-            <div className="input-field col s12 l6">   
-                <div id="priceSlider"></div>            
-                {/* <input type="text" className="search" value={this.state.firstPrice} onChange={this.firstPrice} />
-                <input type="text" className="search" value={this.state.secondPrice} onChange={this.secondPrice} /> */}
+                <div className="col s3 l2 left-align">
+                    <span id="lower-price"></span>
+                </div>
+                <div className="col s3 l2 offset-l8 offset-s6 right-align">
+                    <span id="upper-price"></span> 
+                </div> 
             </div> 
 
             <div className="input-field col l3 s12">
@@ -114,12 +122,10 @@ class AdvertisementsList extends React.Component {
                 <label>Сортировка</label>
             </div>
             </form>
-        </article>
-        <article className="advertisements">
+        </header>
+        <section className="advertisements container">
             {this.mapAdv()}
-        </article>
+        </section>
     </section>
    }
 }
-
-export default AdvertisementsList
