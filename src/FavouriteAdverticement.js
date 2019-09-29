@@ -9,7 +9,7 @@ export default class FavouriteAdverticement extends React.Component{
         this.setState( { products: { ...localStorage } } )
     }
     renderFavAdv = () => {
-        return Object.keys(localStorage).map(k => <Advertisement product={JSON.parse(localStorage.getItem(k))}/>)
+        return Object.keys(localStorage).map((k,i) => <Advertisement key={i} btnClass="btn-floating-favourite" product={JSON.parse(localStorage.getItem(k))}/>)
     }
     render(){
         return  <div>

@@ -22,12 +22,18 @@ const numPrettier = (num)=>{
 }
 
 class Advertisement extends React.Component{
+  state={btnClass:''}
   setFavourite = (e) => {
-    let favouriteProduct = JSON.stringify(this.props.product)
+    let productWithClass = this.props.product
+    productWithClass.class = 'btn-floating-favourite'
+    console.log(productWithClass)
+    let favouriteProduct = JSON.stringify(productWithClass)
     localStorage.setItem(this.props.product.id, favouriteProduct)
+    this.setState({btnClass:'btn-floating-favourite'})
   }
   render(){
     const {product} = this.props
+    const btnClass = 'btn-floating-favourite'; 
     return(
         <article className="adverisements_advertisement advertisement row">
           <div className="col s12">
@@ -35,9 +41,9 @@ class Advertisement extends React.Component{
               <div className="card-image">
                 <Carousel  showThumbs={false}>{product.pictures.map((picture, i)=><img src={picture} key={i}/>)}</Carousel>
                 <span className="advertisement_title card-title">{product.title}</span>
-                <button className="btn-floating halfway-fab waves-effect waves-light " onClick={this.setFavourite} id={this.props.product.id} ><i className="fa fa-heart"></i></button>
+                <button className="btn-floating halfway-fab waves-effect waves-light " onClick={this.setFavourite} id={this.props.product.id} ><i className={`fa fa-heart ${this.state.btnClass?this.state.btnClass:this.props.product.class}`}></i></button>
               </div>
-              <div class="card-content">
+              <div className="card-content">
                 <StarRatings rating={product.seller_rating} starRatedColor="gold" numberOfStars={5} name='rating'/>         
                 <div className="advertisement_price">{numPrettier(product.price)}₽</div>
                 <div className="advertisement_name">{product.seller_name}</div>
