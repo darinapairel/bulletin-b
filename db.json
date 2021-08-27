@@ -10,6 +10,21 @@
             "seller_name": "Andy",
             "seller_rating": 3
         },
+        {   
+            "id": 3,
+            "seller_name": "Ri",
+            "seller_rating": 3
+        },
+        {   
+            "id": 4,
+            "seller_name": "Marg",
+            "seller_rating": 3
+        },
+        {   
+            "id": 5,
+            "seller_name": "Lilit",
+            "seller_rating": 3
+        }
 
     ],
     "products":[   
