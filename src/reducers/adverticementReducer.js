@@ -2,7 +2,7 @@ import * as adverticementActions from '../actions/advericementAction'
 
 let localFavourites = localStorage.getItem('favourites')
 
-if (localFavourites === null){
+if (!localFavourites){
     localStorage.setItem('favourites', [])
 } else{
     localFavourites = JSON.parse(localFavourites)

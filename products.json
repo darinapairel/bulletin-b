@@ -1,0 +1,41 @@
+[   {
+        "title": "The best cat in the world",
+        "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+        "id": 1, 
+        "price": 12000,
+        "category": "any"
+    },
+    {
+        "title": "A huge house in California",
+        "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+        "id": 2,
+        "price": 13000000,
+        "category": "immovable"
+    },
+    {
+        "title": "Camera Zenit TTL",
+        "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+        "id": 3,
+        "price": 15000,
+        "category": "cameras"
+    },
+    {
+        "title": "Lada Priora",
+        "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+        "id": 4,
+        "price": 1000,
+        "category": "auto"
+    },
+    {
+        "title": "MacBook Pro",
+        "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+        "id": 5,
+        "price": 10000,
+        "category": "laptops"
+    }
+]

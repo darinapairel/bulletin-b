@@ -2,7 +2,7 @@ import React from 'react'
 import Advertisement from './Advertisement'
 import { Link } from 'react-router-dom'
 import * as advericementAction from '../actions/advericementAction'
-import { bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class FavouriteAdverticement extends React.Component{
