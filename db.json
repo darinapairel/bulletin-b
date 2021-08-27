@@ -1,0 +1,62 @@
+{
+    "sellers": [
+        {
+            "id": 1,
+            "seller_name": "Piotr",
+            "seller_rating": 4
+        },
+        {   
+            "id": 2,
+            "seller_name": "Andy",
+            "seller_rating": 3
+        },
+
+    ],
+    "products":[   
+        {   
+            "relationships":  {"seller":2},
+            "title": "The best cat in the world",
+            "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+            "id": 1, 
+            "price": 12000,
+            "category": "any"
+        },
+        {
+            "relationships": {"seller":4},
+            "title": "A huge house in California",
+            "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+            "id": 2,
+            "price": 13000000,
+            "category": "immovable"
+        },
+        {
+            "relationships":  {"seller":3},
+            "title": "Camera Zenit TTL",
+            "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+            "id": 3,
+            "price": 15000,
+            "category": "cameras"
+        },
+        {
+            "relationships": {"seller":1},
+            "title": "Lada Priora",
+            "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+            "id": 4,
+            "price": 1000,
+            "category": "auto"
+        },
+        {
+            "relationships": {"seller":5},
+            "title": "MacBook Pro",
+            "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
+
+            "id": 5,
+            "price": 10000,
+            "category": "laptops"
+        }
+    ]
+}
