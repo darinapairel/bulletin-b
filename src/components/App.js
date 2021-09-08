@@ -15,11 +15,11 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    Promise.all(['https://avito.dump.academy/sellers/', 'https://avito.dump.academy/products'].map(url => fetch(url).then(j => j.json()) )) 
+    Promise.all(['https://my-json-server.typicode.com/darinapairel/avitotest/sellers', 'https://my-json-server.typicode.com/darinapairel/avitotest/products'].map(url => fetch(url).then(j => j.json()) )) //https://avito.dump.academy/products
     .then(data=>{
       
-      let sellers = data[0].data
-      let products = data[1].data
+      let sellers = data[0]
+      let products = data[1]
       console.log(data)
       products = products.map(p => {
         let seller = sellers.find(s => s.id === p.relationships.seller) || {name: '', rating: 0}
