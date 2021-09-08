@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75a2e5c3dfebc757d2c0d9e84468b2c9",
+    "revision": "435d2a08546df5f77aac5455e8669416",
     "url": "/avitotest/index.html"
   },
   {
-    "revision": "1f3cd7356cc7a6a36c66",
-    "url": "/avitotest/static/css/2.c4c88df4.chunk.css"
+    "revision": "7549ea06f1970832b5de",
+    "url": "/avitotest/static/css/2.f81fbc14.chunk.css"
   },
   {
-    "revision": "32ddd9fd01196a44e50c",
-    "url": "/avitotest/static/css/main.27c41f06.chunk.css"
+    "revision": "3939cb0de88b66acf6cc",
+    "url": "/avitotest/static/css/main.94bf34a8.chunk.css"
   },
   {
-    "revision": "1f3cd7356cc7a6a36c66",
-    "url": "/avitotest/static/js/2.50b3474a.chunk.js"
+    "revision": "7549ea06f1970832b5de",
+    "url": "/avitotest/static/js/2.6698d103.chunk.js"
   },
   {
-    "revision": "32ddd9fd01196a44e50c",
-    "url": "/avitotest/static/js/main.bcc43617.chunk.js"
+    "revision": "3939cb0de88b66acf6cc",
+    "url": "/avitotest/static/js/main.8fb0e315.chunk.js"
   },
   {
     "revision": "4733c91d62305879b026",

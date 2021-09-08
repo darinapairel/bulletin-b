@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/avitotest/static/css/main.27c41f06.chunk.css",
-    "main.js": "/avitotest/static/js/main.bcc43617.chunk.js",
-    "main.js.map": "/avitotest/static/js/main.bcc43617.chunk.js.map",
+    "main.css": "/avitotest/static/css/main.94bf34a8.chunk.css",
+    "main.js": "/avitotest/static/js/main.8fb0e315.chunk.js",
+    "main.js.map": "/avitotest/static/js/main.8fb0e315.chunk.js.map",
     "runtime~main.js": "/avitotest/static/js/runtime~main.eee80e53.js",
     "runtime~main.js.map": "/avitotest/static/js/runtime~main.eee80e53.js.map",
-    "static/css/2.c4c88df4.chunk.css": "/avitotest/static/css/2.c4c88df4.chunk.css",
-    "static/js/2.50b3474a.chunk.js": "/avitotest/static/js/2.50b3474a.chunk.js",
-    "static/js/2.50b3474a.chunk.js.map": "/avitotest/static/js/2.50b3474a.chunk.js.map",
+    "static/css/2.f81fbc14.chunk.css": "/avitotest/static/css/2.f81fbc14.chunk.css",
+    "static/js/2.6698d103.chunk.js": "/avitotest/static/js/2.6698d103.chunk.js",
+    "static/js/2.6698d103.chunk.js.map": "/avitotest/static/js/2.6698d103.chunk.js.map",
     "index.html": "/avitotest/index.html",
-    "precache-manifest.c97a4a12395e9fe9bfb6a81e2c7d6ac7.js": "/avitotest/precache-manifest.c97a4a12395e9fe9bfb6a81e2c7d6ac7.js",
+    "precache-manifest.0b02f0e470aef09128bd09794fe7992c.js": "/avitotest/precache-manifest.0b02f0e470aef09128bd09794fe7992c.js",
     "service-worker.js": "/avitotest/service-worker.js",
-    "static/css/2.c4c88df4.chunk.css.map": "/avitotest/static/css/2.c4c88df4.chunk.css.map",
-    "static/css/main.27c41f06.chunk.css.map": "/avitotest/static/css/main.27c41f06.chunk.css.map",
+    "static/css/2.f81fbc14.chunk.css.map": "/avitotest/static/css/2.f81fbc14.chunk.css.map",
+    "static/css/main.94bf34a8.chunk.css.map": "/avitotest/static/css/main.94bf34a8.chunk.css.map",
     "static/media/font-awesome.min.css": "/avitotest/static/media/fontawesome-webfont.fee66e71.woff"
   }
 }
