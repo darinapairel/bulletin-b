@@ -8,7 +8,7 @@
         {   
             "id": 2,
             "name": "Andy",
-            "rating": 3
+            "rating": 2
         },
         {   
             "id": 3,
@@ -18,12 +18,12 @@
         {   
             "id": 4,
             "name": "Marg",
-            "rating": 3
+            "rating": 1
         },
         {   
             "id": 5,
             "name": "Lilit",
-            "rating": 3
+            "rating": 5
         }
 
     ],
@@ -43,7 +43,7 @@
             "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
 
             "id": 2,
-            "price": 13000000,
+            "price": 1300000,
             "category": "immovable"
         },
         {
