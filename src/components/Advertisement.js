@@ -9,21 +9,7 @@ import * as advericementAction from '../actions/advericementAction'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 
-const numPrettier = (num)=>{
-  if (num){ 
-    num = String(num)
-    if(Number.isInteger(num.length/3)){
-      return num.split(/(\d{3})/).join(" ")
-    }else{
-      let j = num.length
-      j = num.length > 3 ? j % 3 : 0 
-      
-      return j ? num.substr(0, j) + " " : "" + num.substr(j).replace(/(\d{3})(?=\d)/g, " ")
-    }
-  }else{
-    return null
-  }  
-}
+const numPrettier = (num) => new Intl.NumberFormat().format(num) 
 
 class Advertisement extends React.Component{
   state={btnClass:''}

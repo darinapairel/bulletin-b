@@ -28,13 +28,13 @@ class AdvertisementsList extends React.Component {
             document.getElementById('upper-price')
         ]
         noUiSlider.create(slider, {
-            start: [0, 3000000],
+            start: [0, 100000],
             connect: true,
             step: 100,
             tooltips: false,
             range: {
                 'min': 0,
-                'max': 3000000
+                'max': 100000
             }
         })
         slider.noUiSlider.on('change', (values,handle)=>{
@@ -65,7 +65,7 @@ class AdvertisementsList extends React.Component {
             return price>=prices[0] && price<=prices[1]
         })
         if (this.state.selectedSort === 'price')
-            products = products.sort((a,b)=>{
+            products = products.sort((a,b) => {
                 if (a.price > b.price)
                     return 1
 
@@ -86,6 +86,7 @@ class AdvertisementsList extends React.Component {
         if (this.state.selectedCategory !== "any"){
             products = products.filter(p=>{
                 let category = p.category
+                console.log(category)
                 return category === this.state.selectedCategory
             })
         }
@@ -114,11 +115,7 @@ class AdvertisementsList extends React.Component {
    <select name="category" 
         value={this.state.selectedCategory} 
         ref={node=>{this.select = node}} 
-        onChange={ ()=>
-            // this.select.value
-        
-       this.categoryOnChange
-       }>
+        onChange={this.categoryOnChange}>
                     <option value="any">любая категория</option>
                     <option value="immovable">недвижимость</option>
                     <option value="cameras">камеры</option>
