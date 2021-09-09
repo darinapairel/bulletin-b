@@ -39,11 +39,11 @@
         },
         {
             "relationships": {"seller":4},
-            "title": "A huge house in California",
+            "title": "A huge house",
             "pictures": ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"],
 
             "id": 2,
-            "price": 1300000,
+            "price": 13000,
             "category": "immovable"
         },
         {
