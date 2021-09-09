@@ -4,7 +4,7 @@ import 'materialize-css'
 import 'materialize-css/dist/css/materialize.min.css'
 import AdvertisementsList from './AdvertisementsList.js'
 import FavouriteAdverticement from './FavouriteAdverticement.js'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, HashRouter } from 'react-router-dom'
 import 'font-awesome/css/font-awesome.min.css'
 
 
@@ -36,12 +36,12 @@ class App extends React.Component {
     const favAdv = () => <FavouriteAdverticement products={products}/>
   return (
     <div className="App container">
-      <BrowserRouter>
+      <HashRouter basename={process.env.PUBLIC_URL}>
       <div>
         <Route exact path="/" component={advList}/>
         <Route exact path='/favourite' component={favAdv}/>        
       </div>
-      </BrowserRouter> 
+      </HashRouter> 
     </div>
   );
 }

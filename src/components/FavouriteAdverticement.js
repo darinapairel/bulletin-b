@@ -17,7 +17,7 @@ class FavouriteAdverticement extends React.Component{
     }
     render(){
         return  <div>
-            <Link to="/"><i className="fa fa-home"></i></Link>
+            <Link to={process.env.PUBLIC_URL}><i className="fa fa-home"></i></Link>
             {this.renderFavAdv()}
         </div>
         
