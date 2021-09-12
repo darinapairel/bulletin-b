@@ -27,7 +27,7 @@ class Advertisement extends React.Component{
           <div className="col s12">
             <div className="card ">
               <div className="card-image">
-                <Carousel  showThumbs={false}>{product.pictures.map((picture, i)=><img src={picture} key={i}/>)}</Carousel>
+                <Carousel  showThumbs={false}>{product.pictures.map((picture, i)=><img src={picture} key={i} alt={`pic#${i}`} />)}</Carousel>
                 <span className="advertisement_title card-title">{product.title}</span>
                 <button className="btn-floating halfway-fab waves-effect waves-light " onClick={this.setFavourite} id={this.props.product.id} ><i className={`fa fa-heart ${btnClass}`}></i></button>
               </div>

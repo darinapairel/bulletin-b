@@ -1,8 +1,6 @@
 import React from 'react'
 import Advertisement from './Advertisement'
 import { Link } from 'react-router-dom'
-import * as advericementAction from '../actions/advericementAction'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class FavouriteAdverticement extends React.Component{
@@ -30,11 +28,4 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps (dispatch) {
-    return {
-        addToFavourite: bindActionCreators(advericementAction.addToFavourite, dispatch)
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavouriteAdverticement)
+export default connect(mapStateToProps )(FavouriteAdverticement)

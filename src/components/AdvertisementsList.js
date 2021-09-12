@@ -5,9 +5,6 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 import 'materialize-css/dist/css/materialize.min.css'
 import noUiSlider from 'materialize-css/extras/noUiSlider/nouislider.js'
 import 'materialize-css/extras/noUiSlider/nouislider.css'
-import * as advericementAction from '../actions/advericementAction'
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux'
 
 class AdvertisementsList extends React.Component {
 
@@ -58,7 +55,6 @@ class AdvertisementsList extends React.Component {
 
         let {products} = this.props
         let {prices} = this.state
-        const {favourites} = this.props
 
         products = products.filter(p => {
             let price = p.price || ''
@@ -86,12 +82,11 @@ class AdvertisementsList extends React.Component {
         if (this.state.selectedCategory !== "any"){
             products = products.filter(p=>{
                 let category = p.category
-                console.log(category)
                 return category === this.state.selectedCategory
             })
         }
 
-        return products.map((product, key)=><Advertisement addToFavourite = {this.props.addToFavourite} product={product} key={key}/>)
+        return products.map((product, key)=><Advertisement /*addToFavourite = {this.props.addToFavourite}*/ product={product} key={key}/>)
    }
 
    render(){
@@ -141,17 +136,5 @@ class AdvertisementsList extends React.Component {
    }
 }
 
-function mapStateToProps(state) {
-    return {
-        favourites: state.advList.favourites
-    }
-}
 
-function mapDispatchToProps (dispatch) {
-    return {
-        addToFavourite: bindActionCreators(advericementAction.addToFavourite, dispatch)
-    }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(AdvertisementsList)
+export default AdvertisementsList

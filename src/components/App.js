@@ -20,7 +20,6 @@ class App extends React.Component {
       
       let sellers = data[0]
       let products = data[1]
-      console.log(data)
       products = products.map(p => {
         let seller = sellers.find(s => s.id === p.relationships.seller) || {name: '', rating: 0}
         return {...p, seller_name: seller.name, seller_rating: seller.rating}
